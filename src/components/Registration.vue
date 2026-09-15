@@ -105,8 +105,8 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 import MarkdownViewer from './MarkdownViewer.vue'
 
-const supabaseUrl = 'https://jyispqvveedxjsfkjsuc.supabase.co'
-const supabaseKey = 'sb_publishable_TEF36XIfs12u-MH0EKmk9A_In2Y333H'
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const firstName = ref('')
