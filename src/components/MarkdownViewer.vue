@@ -54,6 +54,7 @@ const close = () => {
   justify-content: center;
   z-index: 2000;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 20px;
 }
 
