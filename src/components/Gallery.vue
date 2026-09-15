@@ -163,6 +163,7 @@ import { IconBrandGoogleDrive } from '@tabler/icons-vue';
     justify-content: center;
     z-index: 2;
     transform: translateZ(0);
+    will-change: backdrop-filter;
 }
 
 
@@ -227,24 +228,60 @@ import { IconBrandGoogleDrive } from '@tabler/icons-vue';
 
 
 @media (max-width: 768px) {
-    .gallery-section{
-        padding: 1rem 1.5rem;
+    .gallery-section {
+        padding: 4rem 1.5rem;
     }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 140px;
+        grid-auto-rows: 150px;
+        gap: 0.75rem;
+        padding: 0.75rem;
     }
     .item-large, .item-wide {
         grid-column: span 2;
     }
+    .item-tall {
+        grid-row: span 1;
+    }
+    .item-large {
+        grid-row: span 1;
+    }
     .drive-cta-card {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
     .title {
         font-size: 2rem;
     }
-    .drive-btn{
-        font-size: 0.7rem;
+    .drive-btn {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        padding: 3rem 1rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .item-large, .item-wide {
+        grid-column: span 1;
+    }
+    .gallery-item:nth-child(n+4) {
+        display: none;
+    }
+    .title {
+        font-size: 1.75rem;
+    }
+    .drive-cta-card h3 {
+        font-size: 1.15rem;
+    }
+    .drive-cta-card p {
+        font-size: 0.85rem;
     }
 }
 </style>

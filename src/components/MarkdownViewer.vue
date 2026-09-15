@@ -56,6 +56,7 @@ const close = () => {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   padding: 20px;
+  will-change: backdrop-filter;
 }
 
 .modal-content {
