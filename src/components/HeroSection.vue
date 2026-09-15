@@ -76,6 +76,8 @@ const scrollToRegistration = () => {
     -webkit-backdrop-filter: blur(12px);
     transform: translateZ(0);
     will-change: backdrop-filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     color: white;
     font-size: 0.9rem;
@@ -171,11 +173,13 @@ const scrollToRegistration = () => {
     left: 0;
     width: 100%;
 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transform: translateZ(0);
     will-change: backdrop-filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     
     padding: 1rem 3rem;
     box-sizing: border-box;

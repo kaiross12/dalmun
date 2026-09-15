@@ -144,7 +144,12 @@ const goToHome = () => {
 .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); font-family: "Inter", sans-serif; pointer-events: none; box-sizing: border-box; }
 .nav-container { position: relative; max-width: 1800px; width: calc(100% - 60px); margin: 0 auto; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; pointer-events: auto; background: transparent; border-radius: 20px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-sizing: border-box; }
 .navbar.scrolled { padding: 10px 0; }
-.navbar.scrolled .nav-container { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: #ffffff15; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); transform: translateZ(0); will-change: backdrop-filter; }
+.navbar.scrolled .nav-container {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; pointer-events: auto; z-index: 2; }
 .logo-image { height: 50px; width: auto; object-fit: contain; display: block; }
 .nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; position: absolute; left: 50%; transform: translateX(-50%); transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: 1; }
@@ -165,7 +170,7 @@ const goToHome = () => {
 .mobile-toggle:hover { background: rgba(255, 255, 255, 0.08); }
 .navbar.scrolled .mobile-toggle svg { color: #000; }
 .navbar.scrolled .mobile-toggle:hover { background: rgba(0, 0, 0, 0.08); }
-.mobile-drawer { display: none; position: fixed; top: 0; right: -100%; width: min(320px, 80vw); height: 100vh; background: #fff; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 90px 32px 40px; flex-direction: column; gap: 0; transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12); z-index: 999; pointer-events: auto; transform: translateZ(0); will-change: backdrop-filter; }
+.mobile-drawer { display: none; position: fixed; top: 0; right: -100%; width: min(320px, 80vw); height: 100vh; background: rgba(255, 255, 255, 0.85); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); padding: 90px 32px 40px; flex-direction: column; gap: 0; transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12); z-index: 999; pointer-events: auto; }
 .mobile-drawer.drawer-open { right: 0; }
 .mobile-nav-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .mobile-nav-links .nav-item { font-size: 1.15rem; display: block; padding: 12px 8px; border-bottom: 1px solid rgba(0, 0, 0, 0.06); }

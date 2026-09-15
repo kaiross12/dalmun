@@ -155,15 +155,13 @@ import { IconBrandGoogleDrive } from '@tabler/icons-vue';
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     background: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-    transform: translateZ(0);
-    will-change: backdrop-filter;
 }
 
 
