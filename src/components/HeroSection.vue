@@ -352,13 +352,13 @@ const scrollToRegistration = () => {
 @media (max-width: 768px) {
     .event-footer {
         flex-direction: column;
-        gap: 1.5rem;
-        padding: 1rem;
+        gap: 1.2rem;
+        padding: 1.5rem 1rem;
     }
     
     .footer-left {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
         padding-right: 0;
         width: 100%;
         align-items: center;
@@ -366,27 +366,47 @@ const scrollToRegistration = () => {
 
     .left-info {
         align-items: center;
+        text-align: center;
     }
 
     .left-bottom {
         flex-direction: column;
         align-items: center;
+        gap: 0.3rem;
+    }
+
+    .footer-title-row {
+        justify-content: center;
     }
 
     .footer-countdown {
         justify-content: center;
         width: 100%;
+        background: rgba(0, 0, 0, 0.04);
+        padding: 0.6rem;
+        border-radius: 8px;
     }
 
-    .footer-center, .footer-right {
+    .footer-center {
+        width: 100%;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        order: -1;
+    }
+    
+    .committee-list {
+        font-size: 0.85rem;
+    }
+
+    .footer-right {
         align-items: center;
         justify-content: center;
         text-align: center;
         width: 100%;
     }
     
-    .footer-right {
-        flex-wrap: wrap;
+    .logo-placeholder {
+        font-size: 0.8rem;
     }
 }
 </style>
