@@ -55,8 +55,8 @@ const faqs = ref([
         answer: "No, participation in the event is completely free of charge."
     },
     {
-        question: "Is accommodation provided?",
-        answer: "No, accommodation is not provided as part of the event."
+        question: "Which MUN procedure is followed during the event?",
+        answer: "The Harvard MUN procedure will be followed throughout the event."
     },
     {
         question: "Will a certificate be provided?",
