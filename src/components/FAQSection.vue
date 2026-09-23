@@ -61,10 +61,6 @@ const faqs = ref([
     {
         question: "Will a certificate be provided?",
         answer: "Yes, participants who attend all sessions except for a maximum of 2 sessions will receive a certificate of participation. Participants who are late for 2 sessions will not be eligible to receive a certificate."
-    },
-    {
-        question: "Is there a dress code?",
-        answer: "Yes, a formal dress code (Western Business Attire) is mandatory throughout the event. Casual attire can be worn during social events."
     }
 ])
 </script>
