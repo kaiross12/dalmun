@@ -350,6 +350,10 @@ const scrollToRegistration = () => {
 }
 
 @media (max-width: 768px) {
+
+    .description{
+        font-size: 0.8rem;
+    }
     .event-footer {
         flex-direction: column;
         gap: 1.2rem;
