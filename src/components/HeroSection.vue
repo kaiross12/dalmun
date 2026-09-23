@@ -251,7 +251,8 @@ const scrollToRegistration = () => {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 3rem;
     padding-right: 2rem; 
 }
 
@@ -350,56 +351,60 @@ const scrollToRegistration = () => {
 }
 
 @media (max-width: 768px) {
-
-    .description{
+    .description {
         font-size: 0.8rem;
     }
+    
     .event-footer {
         flex-direction: column;
-        gap: 1.2rem;
-        padding: 1.5rem 1rem;
+        gap: 0.8rem;
+        padding: 1rem;
     }
     
     .footer-left {
-        flex-direction: column;
-        gap: 1.2rem;
-        padding-right: 0;
+        flex-direction: row;
+        justify-content: space-between;
         width: 100%;
         align-items: center;
+        gap: 0.5rem;
+        padding-right: 0;
     }
 
     .left-info {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .left-bottom {
         flex-direction: column;
-        align-items: center;
-        gap: 0.3rem;
+        align-items: flex-start;
+        gap: 0.1rem;
     }
 
     .footer-title-row {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .footer-countdown {
-        justify-content: center;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.04);
-        padding: 0.6rem;
-        border-radius: 8px;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        justify-content: flex-end;
+    }
+
+    .countdown-value {
+        font-size: 0.95rem;
     }
 
     .footer-center {
         width: 100%;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         order: -1;
     }
     
     .committee-list {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .footer-right {
@@ -411,6 +416,7 @@ const scrollToRegistration = () => {
     
     .logo-placeholder {
         font-size: 0.8rem;
+        padding: 0;
     }
 }
 </style>
