@@ -19,19 +19,37 @@
 
         <div class="event-footer">
             <div class="footer-left">
-                <div class="footer-title-row">
-                    <h4 class="event-name">DalMUN'26</h4>
+                <div class="left-info">
+                    <div class="footer-title-row">
+                        <h4 class="event-name">DalMUN'26</h4>
+                    </div>
+                    <div class="left-bottom">
+                        <p class="event-date">24-25 Ekim 2026</p>
+                        <div class="location-wrapper">
+                            <svg class="tabler-pin-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.243 -4.243a8 8 0 1 1 11.314 0z" />
+                            </svg>
+                            <a class="event-location" href="https://maps.app.goo.gl/bCZcA9E9jQvkagjq5">Kırklareli / Türkiye</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="left-bottom">
-                    <p class="event-date">24-25 Ekim 2026</p>
-                <div class="location-wrapper">
-                    <svg class="tabler-pin-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.243 -4.243a8 8 0 1 1 11.314 0z" />
-                    </svg>
-                    <a class="event-location" href="https://maps.app.goo.gl/bCZcA9E9jQvkagjq5">Kırklareli / Türkiye</a>
-                </div>
+                
+                <div class="footer-countdown">
+                    <IconHourglassHigh size="22" stroke-width="1.5" color="#636363" style="margin-right: 5px;" />
+                    <div class="countdown-item">
+                        <span class="countdown-value">{{ days }} :</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value">{{ hours }} :</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value">{{ minutes }} :</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value">{{ seconds }}</span>
+                    </div>
                 </div>
             </div>
 
@@ -47,10 +65,47 @@
 </template>
 
 <script setup>
+import { IconHourglassHigh } from '@tabler/icons-vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import '@fontsource/poppins/300.css'; 
 import '@fontsource/poppins/400.css'; 
 import '@fontsource/poppins/500.css'; 
 import '@fontsource/poppins/700.css'; 
+
+const days = ref(0);
+const hours = ref(0);
+const minutes = ref(0);
+const seconds = ref(0);
+let timer;
+
+const updateCountdown = () => {
+    const targetDate = new Date('2026-10-17T00:00:00').getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+        days.value = 0;
+        hours.value = 0;
+        minutes.value = 0;
+        seconds.value = 0;
+        clearInterval(timer);
+        return;
+    }
+
+    days.value = Math.floor(distance / (1000 * 60 * 60 * 24));
+    hours.value = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    seconds.value = Math.floor((distance % (1000 * 60)) / 1000);
+};
+
+onMounted(() => {
+    updateCountdown();
+    timer = setInterval(updateCountdown, 1000);
+});
+
+onUnmounted(() => {
+    clearInterval(timer);
+});
 
 const scrollToRegistration = () => {
     const el = document.getElementById('registration');
@@ -62,7 +117,6 @@ const scrollToRegistration = () => {
 
 <style scoped>
 @import url('https://googleapis.com'); 
-
 
 .learn-more-btn {
     margin-top: 1.5rem;
@@ -107,6 +161,7 @@ const scrollToRegistration = () => {
 .learn-more-btn:active {
     transform: translateY(0);
 }
+
 .video-container {
     width: 100%;
     max-width: 800px;
@@ -129,7 +184,7 @@ const scrollToRegistration = () => {
     outline: none;
 }
 
-.description{
+.description {
     color: #ffffff;
     text-align: center;
     width: 100%;
@@ -141,12 +196,11 @@ const scrollToRegistration = () => {
     box-sizing: border-box;
 }
 
-.left-bottom{
+.left-bottom {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
-    justify-content: center;
 }
 
 .hero-section-container {
@@ -196,18 +250,23 @@ const scrollToRegistration = () => {
 .footer-left {
     flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2rem; 
+}
+
+.left-info {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.15rem;
 }
-
 
 .footer-title-row {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 
 .location-wrapper {
     display: flex;
@@ -217,6 +276,34 @@ const scrollToRegistration = () => {
 
 .tabler-pin-icon {
     color: #888888;
+}
+
+.footer-countdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-value {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #636363;
+    font-family: 'Poppins', sans-serif;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    color: #636363;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .footer-center {
@@ -265,18 +352,39 @@ const scrollToRegistration = () => {
 @media (max-width: 768px) {
     .event-footer {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 1rem;
     }
-    .footer-left, .footer-center, .footer-right {
+    
+    .footer-left {
+        flex-direction: column;
+        gap: 1rem;
+        padding-right: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .left-info {
+        align-items: center;
+    }
+
+    .left-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-countdown {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-center, .footer-right {
         align-items: center;
         justify-content: center;
         text-align: center;
+        width: 100%;
     }
-    .footer-title-row {
-        flex-direction: column;
-        gap: 0.2rem;
-    }
+    
     .footer-right {
         flex-wrap: wrap;
     }

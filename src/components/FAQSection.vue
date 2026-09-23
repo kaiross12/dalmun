@@ -48,19 +48,19 @@ const toggleFaq = (index) => {
 const faqs = ref([
     {
         question: "Who can participate in the event?",
-        answer: "High school and university students, as well as young people interested in committee topics, can apply."
+        answer: "The event is open to high school students."
     },
     {
-        question: "How much is the registration fee and what does it include?",
-        answer: "Our registration fees vary depending on the early and late registration periods. The fee includes lunch, coffee break refreshments, and social activities throughout the event."
+        question: "Is there a registration fee?",
+        answer: "No, participation in the event is completely free of charge."
     },
     {
         question: "Is accommodation provided?",
-        answer: "For our participants coming from outside the city or from abroad, discounted accommodation options are offered at hotels we have agreements with."
+        answer: "No, accommodation is not provided as part of the event."
     },
     {
         question: "Will a certificate be provided?",
-        answer: "Yes, all delegates who attend at least 80% of the sessions will be presented with a certificate of participation with international validity."
+        answer: "Yes, participants who attend all sessions except for a maximum of 2 sessions will receive a certificate of participation. Participants who are late for 2 sessions will not be eligible to receive a certificate."
     },
     {
         question: "Is there a dress code?",

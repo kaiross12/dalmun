@@ -1,10 +1,10 @@
 <template>
   <section class="message-section">
     <div class="container">
-      <div class="header-wrapper">
+      <!-- <div class="header-wrapper">
         <h2 class="section-title">Message from the Secretary-General</h2>
         <div class="title-divider"></div>
-      </div>
+      </div> -->
 
       <div class="message-card">
         <div class="quote-badge">
@@ -68,9 +68,9 @@
 }
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Camood', sans-serif;
   font-size: clamp(1.8rem, 4.5vw, 2.4rem);
-  font-weight: 700;
+  font-weight: 400;
   color: #1a1a1a;
   margin: 0 0 0.75rem 0;
   letter-spacing: -0.02em;
