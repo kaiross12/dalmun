@@ -1,5 +1,6 @@
 <template>
     <HeroSection/>
+    
     <About/>
     <MessageSection/>
     <Registration/>
@@ -7,10 +8,12 @@
     <FAQSection/>
     <Divider/>
     <Contact/>
+    <OurTeam/>
     <Footer/>
 </template>
 <script setup>
     import HeroSection from '../components/HeroSection.vue';
+    import OurTeam from '../components/OurTeam.vue';
     import About from '../components/About.vue';
     import FAQSection from '../components/FAQSection.vue';
     import Divider from '../components/Divider.vue';

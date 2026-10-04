@@ -37,6 +37,14 @@
                     <p class="user-role">{{ user3Role }}</p>
                 </div>
             </div>
+
+            <div class="user" v-if="user4">
+                <img :src="image4" alt="" class="userImage">
+                <div class="user-info">
+                    <p class="user-name">{{ user4 }}</p>
+                    <p class="user-role">{{ user4Role }}</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -55,7 +63,10 @@ const props = defineProps({
     user2: String,
     user2Role: String,
     user3: String,
-    user3Role: String
+    user3Role: String,
+    image4: String,
+    user4: String,
+    user4Role: String
 })
 
 const isExpanded = ref(false)
@@ -69,7 +80,7 @@ const isExpanded = ref(false)
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     box-sizing: border-box;
     border: 1px solid #f2f2f2;
@@ -134,7 +145,7 @@ const isExpanded = ref(false)
 .card-bottom {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 15px;
 }
