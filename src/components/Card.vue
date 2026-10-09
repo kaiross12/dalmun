@@ -45,6 +45,15 @@
                     <p class="user-role">{{ user4Role }}</p>
                 </div>
             </div>
+
+            <a v-if="pdfUrl" :href="pdfUrl" target="_blank" class="pdf-preview-link">
+                <div class="pdf-preview">
+                    <svg class="pdf-icon">
+                        <use href="/icons.svg#documentation-icon"></use>
+                    </svg>
+                    <span>Study Guide</span>
+                </div>
+            </a>
         </div>
     </div>
 </template>
@@ -66,7 +75,8 @@ const props = defineProps({
     user3Role: String,
     image4: String,
     user4: String,
-    user4Role: String
+    user4Role: String,
+    pdfUrl: String
 })
 
 const isExpanded = ref(false)
@@ -202,5 +212,44 @@ const isExpanded = ref(false)
     margin: 0;
     font-weight: 300;
     overflow-wrap: break-word;
+}
+
+.pdf-preview-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.pdf-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.pdf-preview:hover {
+    transform: translateX(2px);
+}
+
+.pdf-preview:hover span, .pdf-preview:hover .pdf-icon {
+    color: #797979;
+    stroke: #797979;
+}
+
+.pdf-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #797979;
+    fill: none;
+    transition: stroke 0.3s ease;
+}
+
+.pdf-preview span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #797979;
+    transition: color 0.3s ease;
 }
 </style>

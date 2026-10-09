@@ -13,6 +13,7 @@
             :user2Role="'Chair of WHO'"
             :user3="'irem çelik'"
             :user3Role="'USG of WHO'"
+            :pdfUrl="'/WHO.pdf'"
         />
         <Card
             :title="'Sochum'"
@@ -26,6 +27,7 @@
             :user2Role="'Chair of Sochum'"
             :user3="'ekin uslu'"
             :user3Role="'USG of Sochum'"
+            :pdfUrl="'/SOCHUM.pdf'"
         />
         <Card
             :title="'unodc'"
@@ -42,6 +44,7 @@
             :user3Role="'Co-USG of UNODC'"
             :user1="'çınar özcan'"
             :user1Role="'ACAS of UNODC'"
+            :pdfUrl="'/unodc.pdf'"
         />
         <Card
             :title="'disec'"
@@ -55,6 +58,7 @@
             :user2Role="'Chair of DISEC'"
             :user3="'onur tuna büyükyakalı'"
             :user3Role="'USG of DISEC'"
+            :pdfUrl="'/DISEC.pdf'"
         />
         </div>
     </div>
