@@ -44,7 +44,7 @@
             :user3Role="'Co-USG of UNODC'"
             :user1="'çınar özcan'"
             :user1Role="'ACAS of UNODC'"
-            :pdfUrl="'/unodc.pdf'"
+            :pdfUrl="'/UNODC-1.pdf'"
         />
         <Card
             :title="'disec'"
